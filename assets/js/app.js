@@ -70,7 +70,7 @@ function updateToolTip(chosenX, circlesGroup) {
       .attr('class', 'tooltip')
       .offset([80, -60])
       .html(function(d) {
-          return (`${d.state}<br>${label}: ${d[chosenX]}<br>Healthcare %: ${d.healthcare}`);
+          return (`${d.state}<br>${label}: ${d[chosenX]}<br>Lacks Healthcare: ${d.healthcare}%`);
       });
   
   circlesGroup.call(toolTip);
@@ -145,7 +145,7 @@ d3.csv('assets/data/chartData.csv').then(function(chartData) {
       .attr('x', 0 - (height / 2))
       .attr('dy', '1em')
       .classed('axis-text', true)
-      .text('Healthcare (%)')
+      .text('Lacks Healthcare (%)')
       .attr('font-weight', 700)
       .attr('font-size', 16)
       .attr('fill', 'palevioletred');
